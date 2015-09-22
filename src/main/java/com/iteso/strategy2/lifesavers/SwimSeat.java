@@ -1,5 +1,6 @@
 package com.iteso.strategy2.lifesavers;
 
+import com.iteso.strategy.behaviors.impl.NotDeflatable;
 import com.iteso.strategy2.Lifesaver;
 
 /**
@@ -10,7 +11,10 @@ import com.iteso.strategy2.Lifesaver;
  * To change this template use File | Settings | File Templates.
  */
 public class SwimSeat extends Lifesaver {
+
     public SwimSeat() {
+
+        iDeflateBehavior = new NotDeflatable();
         type = "Swim seat";
     }
 }

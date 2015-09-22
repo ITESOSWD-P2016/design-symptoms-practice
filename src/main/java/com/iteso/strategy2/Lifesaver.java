@@ -1,5 +1,7 @@
 package com.iteso.strategy2;
 
+import com.iteso.strategy.behaviors.iDeflateBehavior;
+
 /**
  * Created with IntelliJ IDEA.
  * User: rvillalobos
@@ -9,6 +11,7 @@ package com.iteso.strategy2;
  */
 public abstract class Lifesaver {
     protected String type;
+    public com.iteso.strategy.behaviors.iDeflateBehavior iDeflateBehavior;
     public String inflating() {
         return "I'm inflating";
     }

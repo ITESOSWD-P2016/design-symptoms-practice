@@ -2,6 +2,7 @@ package com.iteso.strategy;
 
 import com.iteso.strategy.behaviors.iBounceBehavior;
 import com.iteso.strategy.behaviors.iDeflateBehavior;
+import com.iteso.strategy.behaviors.iFloatBehavior;
 
 /**
  * Created with IntelliJ IDEA.
@@ -11,9 +12,10 @@ import com.iteso.strategy.behaviors.iDeflateBehavior;
  * To change this template use File | Settings | File Templates.
  */
 public abstract class Ball {
-    protected iBounceBehavior bounceBehavior;
-    protected iDeflateBehavior iDeflateBehavior;
+    private iBounceBehavior bounceBehavior;
+    private iDeflateBehavior iDeflateBehavior;
     protected String type;
+    private iFloatBehavior floatBehavior;
 
     protected Ball() {
     }
@@ -23,14 +25,41 @@ public abstract class Ball {
     }
 
     public String performBounce() {
-        return bounceBehavior.bounce();
+        return getBounceBehavior().bounce();
     }
 
     public String performDeflate() {
-        return iDeflateBehavior.deflate();
+        return getiDeflateBehavior().deflate();
     }
 
     public String performInflate() {
-        return iDeflateBehavior.inflate();
+        return getiDeflateBehavior().inflate();
+    }
+
+    public String performFloat() { return getFloatBehavior().floating(); }
+
+    public iFloatBehavior getFloatBehavior() {
+        return floatBehavior;
+    }
+
+    public void setFloatBehavior(iFloatBehavior floatBehavior) {
+        this.floatBehavior = floatBehavior;
+    }
+
+
+    public com.iteso.strategy.behaviors.iDeflateBehavior getiDeflateBehavior() {
+        return iDeflateBehavior;
+    }
+
+    public void setiDeflateBehavior(com.iteso.strategy.behaviors.iDeflateBehavior iDeflateBehavior) {
+        this.iDeflateBehavior = iDeflateBehavior;
+    }
+
+    public iBounceBehavior getBounceBehavior() {
+        return bounceBehavior;
+    }
+
+    public void setBounceBehavior(iBounceBehavior bounceBehavior) {
+        this.bounceBehavior = bounceBehavior;
     }
 }

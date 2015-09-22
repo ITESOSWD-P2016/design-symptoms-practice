@@ -1,6 +1,7 @@
 package com.iteso.strategy.balls;
 
 import com.iteso.strategy.Ball;
+import com.iteso.strategy.behaviors.impl.CantFloat;
 import com.iteso.strategy.behaviors.impl.IrregularBounce;
 import com.iteso.strategy.behaviors.impl.NotDeflatable;
 
@@ -13,8 +14,9 @@ import com.iteso.strategy.behaviors.impl.NotDeflatable;
  */
 public class BaseballBall extends Ball {
     public BaseballBall() {
-        bounceBehavior =  new IrregularBounce();
-        iDeflateBehavior = new NotDeflatable();
+        setBounceBehavior(new IrregularBounce());
+        setiDeflateBehavior(new NotDeflatable());
+        setFloatBehavior(new CantFloat());
         type = "Baseball ball";
     }
 }
