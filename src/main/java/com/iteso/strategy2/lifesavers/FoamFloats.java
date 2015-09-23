@@ -9,6 +9,6 @@ import com.iteso.strategy2.Lifesaver;
 public class FoamFloats extends Lifesaver {
     public FoamFloats (){
         iDeflateBehavior = new NotDeflatable();
-        type="Foam Floats";
+        type="Foam Float";
     }
 }

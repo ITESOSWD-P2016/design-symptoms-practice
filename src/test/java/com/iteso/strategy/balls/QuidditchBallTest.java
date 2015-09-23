@@ -12,6 +12,8 @@ public class QuidditchBallTest {
         QuidditchBall quidditchBallTest = new QuidditchBall();
         assertEquals("I'm sinking slowly", quidditchBallTest.performFloat());
         assertEquals("I'm bouncing normally!", quidditchBallTest.performBounce());
-      //  assertEquals("I'm");
+        assertEquals("I can't deflate!", quidditchBallTest.performDeflate());
+        assertEquals("I can't inflate!", quidditchBallTest.performInflate());
+        assertEquals("Quidditch ball is rolling!", quidditchBallTest.roll());
     }
 }

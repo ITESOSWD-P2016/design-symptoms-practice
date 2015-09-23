@@ -14,6 +14,7 @@ public class RugbyBallTest {
         assertEquals("I'm bouncing irregularly!", rugbyballtest.performBounce());
         assertEquals("I'm deflating!", rugbyballtest.performDeflate());
         assertEquals("I'm inflating!", rugbyballtest.performInflate());
+        assertEquals("I'm floating normally", rugbyballtest.performFloat());
         assertEquals("Rugby ball is rolling!", rugbyballtest.roll());
     }
 }

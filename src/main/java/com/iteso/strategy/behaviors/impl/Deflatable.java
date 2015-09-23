@@ -15,7 +15,6 @@ public class Deflatable implements iDeflateBehavior {
         return "I'm deflating!";
     }
 
-
     public String inflate() {
         return "I'm inflating!";
     }

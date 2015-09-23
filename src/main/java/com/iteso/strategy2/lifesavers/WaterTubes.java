@@ -10,7 +10,7 @@ import com.iteso.strategy2.Lifesaver;
 public class WaterTubes extends Lifesaver {
     public WaterTubes(){
         iDeflateBehavior = new NotDeflatable();
-        type = "Water Tubes";
+        type = "Water Tube";
     }
 
 

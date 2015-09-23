@@ -13,5 +13,6 @@ public class HulamaBall extends Ball {
         setFloatBehavior(new CantFloat());
         setiDeflateBehavior(new NotDeflatable());
         setBounceBehavior(new IrregularBounce());
+        type = "Hulama ball";
     }
 }
