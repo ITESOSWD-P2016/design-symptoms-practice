@@ -3,6 +3,7 @@ package com.iteso.design;
 
 
 import java.io.IOException;
+import java.util.Scanner;
 
 /**
  * Created with IntelliJ IDEA.
@@ -27,44 +28,81 @@ public class MyBankATM {
             e.printStackTrace();
         }
 
-        int myPin[]= myAtm.askForPin();
+        String myPin= myAtm.askForPin();
 
         myAtm.validatePin(myPin);
 
 
     }
 
-    private void validatePin(int[] myPin) {
+    private void validatePin(String myPin) {
         System.out.println("Thanks for typing a valid pin");
         System.out.println(myPin);
     }
 
-    private int[] askForPin() {
-        int[] pin = new int[4];
-        if (myCard != null){
-            System.out.println("Please Type Pin");
+    private String askForPin() {
+        String PIN = null;
 
-            try {
-                int j;
-                for(j = 0; j<4 ; j++){
-                    pin[j] = System.in.read();
-                }
-            } catch (IOException e) {
-                e.printStackTrace();
+        Scanner scanner = new Scanner(System.in);
+        Scanner scanner2 = new Scanner(System.in);
+
+        if (myCard != null){
+
+            System.out.println("Please Select Card Type");
+            System.out.println("-------------------------------");
+            System.out.println("Type 1 (4 Dígitos Positivos)");
+            System.out.println("Type 2 (6 Dígitos Positivos)");
+            System.out.println("Type 3 (8 Chars Alfanumerícos)");
+            System.out.println(">> ");
+            int opc = scanner.nextInt();
+
+            System.out.println("Please Type Pin");
+            System.out.println(">> ");
+            PIN = scanner2.nextLine();
+
+            switch (opc){
+                case 1:
+                    if (PIN.matches("^(\\d\\d\\d\\d)$"))
+                        System.out.println("PIN Correcto: " + PIN);
+                    else
+                        System.out.println("ERROR: PIN Incorrecto: " + PIN);
+                break;
+
+                case 2:
+                    if (PIN.matches("^(\\d\\d\\d\\d\\d\\d)$"))
+                        System.out.println("PIN Correcto: " + PIN);
+                    else
+                        System.out.println("ERROR: PIN Incorrecto: " + PIN);
+                    break;
+
+                case 3:
+                    if (PIN.matches("^(\\w\\w\\w\\w\\w\\w\\w\\w)$"))
+                        System.out.println("PIN Correcto: " + PIN);
+                    else
+                        System.out.println("ERROR: PIN Incorrecto: " + PIN);
+                    break;
+                default:
+                    System.out.println("ERROR: Opción Incorrecta");
             }
+
         }
-        return pin;
+        return PIN;
 
     }
 
     private void askForCard() throws IOException {
 
+        Scanner scanner = new Scanner(System.in);
+
         if (myCard == null){
             System.out.println("Please Insert Card");
-            int read = System.in.read();
-            if (read >= 1){
+            System.out.println(">> ");
+            int CardNumber = scanner.nextInt();
+            if (CardNumber >= 1){
                 myCard = new MyBankCard();
             }
+
+
         }
 
     }
