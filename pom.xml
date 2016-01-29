@@ -2,7 +2,7 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.iteso</groupId>
-  <artifactId>strategy-practice</artifactId>
+  <artifactId>design-symptoms-practice</artifactId>
   <packaging>jar</packaging>
   <version>1.0-SNAPSHOT</version>
   <name>strategy-practice</name>
@@ -22,7 +22,7 @@
   </dependency>
   </dependencies>
   <build>
-    <finalName>strategy-practice</finalName>
+    <finalName>design-symptoms-practice</finalName>
     <plugins>
       <plugin>
       <groupId>org.codehaus.mojo</groupId>
@@ -39,14 +39,9 @@
           <packageBranchRate>85</packageBranchRate>
           <regexes>
             <regex>
-              <pattern>com.iteso.strategy.*</pattern>
+              <pattern>com.iteso.design.*</pattern>
               <branchRate>90</branchRate>
               <lineRate>80</lineRate>
-            </regex>
-            <regex>
-              <pattern>com.iteso.strategy2.*</pattern>
-              <branchRate>40</branchRate>
-              <lineRate>30</lineRate>
             </regex>
           </regexes>
         </check>
