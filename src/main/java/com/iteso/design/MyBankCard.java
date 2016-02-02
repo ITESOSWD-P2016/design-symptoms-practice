@@ -8,7 +8,7 @@ public class MyBankCard implements BankCard {
 
 
 
-    public String askForCard()  {
+    public String askForCard(){
 
             Scanner scanner = new Scanner(System.in);
             String VerifiedCardNumber;

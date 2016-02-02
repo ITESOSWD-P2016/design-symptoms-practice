@@ -21,13 +21,36 @@ public class MyBankATM {
 
     }
     public static void main(String args[]){
-        MyBankCard myCard = new MyBankCard();
+
+        Scanner scanner = new Scanner(System.in);
+        int BankName = 1;
+
         MyBankATM myATM = new MyBankATM();
 
         boolean valid=false;
+
+        System.out.println("Select your Bank");
+        System.out.println("----------------------------");
+        System.out.println("1) MaiBank");
+        System.out.println("2) OtterBank");
+        System.out.print(">> ");
+        BankName = scanner.nextInt();
+
+        if(BankName == 1)
+        {
+            MyBankCard myCard = new MyBankCard();
+            myATM.Number = myCard.askForCard();
+        }
+        else  if (BankName==2)
+        {
+            OtherBankCard myCard = new OtherBankCard();
+            myATM.Number = myCard.askForCard();
+        }
+
+
         //ATM Should Request Card
 
-            myATM.Number = myCard.askForCard();
+            ;
 
 
 
