@@ -1,14 +1,15 @@
 # Practica
 
 ## Checkpoints
-* Crear cuentahabiente
+* Crear cuentahabiente - josuem
 * Imprimir recibo
-* Checar saldo
-* Cambiar nip
-* Bloquear nip
-* Hacer retiro
-* Crear “bases de datos"
-* Hacer donativo
-* Crear menu de opciones
-* Verificar nip
-* Poner saldo telefonico
+* Checar saldo - sebastiannoriega
+* Cambiar nip - criss
+* Bloquear nip - alexa
+* Hacer retiro - sabino
+* Crear “bases de datos" - alegalindo
+* Hacer donativo - flavio
+* Crear menu de opciones - zkore
+* Verificar nip - luisramra
+* Poner saldo telefonico - jorgeruvalcaba
+* Deposito bancario - mochini
