@@ -2,7 +2,7 @@
 
 ## Checkpoints
 * Crear cuentahabiente - josuem
-* Imprimir recibo
+* Imprimir recibo - ariherna
 * Checar saldo - sebastiannoriega
 * Cambiar nip - criss
 * Bloquear nip - alexa
