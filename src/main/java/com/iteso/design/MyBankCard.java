@@ -21,7 +21,7 @@ public class MyBankCard implements BankCard {
                 System.out.print(">> ");
                 String CardNumber = scanner.nextLine();
 
-                if (CardNumber.matches("^([123](\\d)+)$")){
+                if (CardNumber.matches("^([123](\\d)*)$")){
                     VerifiedCardNumber = CardNumber;
                 }
                 else
