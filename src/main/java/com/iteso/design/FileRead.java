@@ -20,7 +20,7 @@ public class FileRead {
 
     static final  short DIA = 0;
     static final  short MES = 1;
-    static final  short AÃ‘O = 2;
+    static final  short AÑO = 2;
 
     static final  short RETIRO = 0;
     static final  short DEPOSITO = 1;
@@ -37,6 +37,16 @@ public class FileRead {
 
     public FileRead(String file) {
         this.archivo = new File(file);
+    }
+    
+    public void closeFile(){
+    	if (br!= null)
+			try {
+				br.close();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
     }
 
     private void createBufferReader(){
@@ -101,6 +111,21 @@ public class FileRead {
         if(0==linea)return getData(readlastLine());
         else return getData(readLine(linea));
     }
+    
+    // Obtener la información de un cuentahabiente
+    public Cuentahabiente getCuentahabienteInfo (int idCuentahabiente){
+    	String [] arrCuentahabienteInfo;
+    	if (idCuentahabiente == 0)
+    		arrCuentahabienteInfo = getData(readlastLine());
+    	else
+    		arrCuentahabienteInfo = getData(readLine(idCuentahabiente));
+    	
+    	if (arrCuentahabienteInfo == null)
+    		return null;
+    	else{
+    		return new Cuentahabiente(arrCuentahabienteInfo[0], arrCuentahabienteInfo[1], arrCuentahabienteInfo[2]);
+    	}
+    }
 
     public int getIdMovimiento(int linea){
         String Data[]= getDataValidated(linea);
@@ -125,10 +150,10 @@ public class FileRead {
         return fechames;
     }
 
-    public int getFechaAÃ±o(int linea){
+    public int getFechaAño(int linea){
         String Data[]= getFecha(linea);
-        int fechaaÃ±o = Integer.parseInt(Data[AÃ‘O]);
-        return fechaaÃ±o;
+        int fechaaAño = Integer.parseInt(Data[AÑO]);
+        return fechaaAño;
     }
 
     public int getTipodemovimiento(int linea){
