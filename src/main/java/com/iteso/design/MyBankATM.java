@@ -3,6 +3,7 @@ package com.iteso.design;
 
 
 import java.io.IOException;
+import java.util.Scanner;
 
 /**
  * Created with IntelliJ IDEA.
@@ -12,62 +13,74 @@ import java.io.IOException;
  * To change this template use File | Settings | File Templates.
  */
 public class MyBankATM {
-    MyBankCard myCard = null;
+    String Number=null;
+    String Pin=null;
+    String Type=null;
 
     public MyBankATM() {
+
     }
     public static void main(String args[]){
-        MyBankATM myAtm = new MyBankATM();
+
+        Scanner scanner = new Scanner(System.in);
+        int BankName = 1;
+
+        MyBankATM myATM = new MyBankATM();
+
+        boolean valid=false;
+
+        System.out.println("Select your Bank");
+        System.out.println("----------------------------");
+        System.out.println("1) MaiBank");
+        System.out.println("2) OtterBank");
+        System.out.print(">> ");
+        BankName = scanner.nextInt();
+
+        if(BankName == 1)
+        {
+            MyBankCard myCard = new MyBankCard();
+            myATM.Number = myCard.askForCard();
+        }
+        else  if (BankName==2)
+        {
+            OtherBankCard myCard = new OtherBankCard();
+            myATM.Number = myCard.askForCard();
+        }
 
 
         //ATM Should Request Card
-        try {
-            myAtm.askForCard();
-        } catch (IOException e) {
-            e.printStackTrace();
+
+            ;
+
+
+
+        if (myATM.Number.startsWith("1")) {
+            myATM.Type = "1";
+            PIN_4digits myPin = new PIN_4digits();
+            myATM.Pin = myPin.AskForPin();
+            valid = myPin.ValidatePin(myATM.Pin);
+        }
+        else if (myATM.Number.startsWith("2")) {
+            myATM.Type = "2";
+            PIN_6digits myPin = new PIN_6digits();
+            myATM.Pin = myPin.AskForPin();
+            valid = myPin.ValidatePin(myATM.Pin);
         }
 
-        int myPin[]= myAtm.askForPin();
-
-        myAtm.validatePin(myPin);
-
-
-    }
-
-    private void validatePin(int[] myPin) {
-        System.out.println("Thanks for typing a valid pin");
-        System.out.println(myPin);
-    }
-
-    private int[] askForPin() {
-        int[] pin = new int[4];
-        if (myCard != null){
-            System.out.println("Please Type Pin");
-
-            try {
-                int j;
-                for(j = 0; j<4 ; j++){
-                    pin[j] = System.in.read();
-                }
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
-        return pin;
-
-    }
-
-    private void askForCard() throws IOException {
-
-        if (myCard == null){
-            System.out.println("Please Insert Card");
-            int read = System.in.read();
-            if (read >= 1){
-                myCard = new MyBankCard();
-            }
+        else if (myATM.Number.startsWith("3")) {
+            myATM.Type = "3";
+            PIN_8alphanum myPin = new PIN_8alphanum();
+            myATM.Pin = myPin.AskForPin();
+            valid = myPin.ValidatePin(myATM.Pin);
         }
 
+        if (valid)
+            System.out.println("Thanks for typing a valid pin");
+        else
+            System.out.println("Sorry, that is an invalid pin");
+
     }
+
 
 
 }
