@@ -4,6 +4,7 @@ import javax.swing.*;
 import java.io.*;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.Arrays;
 import java.util.Date;
 
 /**
@@ -114,13 +115,14 @@ public class FileRead {
     
     // Obtener la informaci�n de un cuentahabiente
     public Cuentahabiente getCuentahabienteInfo (int idCuentahabiente){
-    	String [] arrCuentahabienteInfo;
+    	String [] arrCuentahabienteInfo= null;
+    	
     	if (idCuentahabiente == 0)
     		arrCuentahabienteInfo = getData(readlastLine());
     	else
     		arrCuentahabienteInfo = getData(readLine(idCuentahabiente));
     	
-    	if (arrCuentahabienteInfo == null)
+    	if (arrCuentahabienteInfo[0] == "ERROR READING FILE")
     		return null;
     	else{
     		return new Cuentahabiente(arrCuentahabienteInfo[0], arrCuentahabienteInfo[1], arrCuentahabienteInfo[2]);
