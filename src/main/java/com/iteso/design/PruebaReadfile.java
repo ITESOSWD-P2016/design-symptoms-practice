@@ -10,11 +10,10 @@ public class PruebaReadfile {
     public static void main(String args[]) throws IOException {
         FileRead oFileRead = new FileRead("resources\\main\\java\\com\\iteso\\cuentahabiente\\cuentahabiente.csv");
 
-        String [] arg = oFileRead.getDataValidated(1);
-        Cuentahabiente oCuentahabienteEsperado = new Cuentahabiente("3", "Rodrigo", "9834");
-        Cuentahabiente oC = new Cuentahabiente(arg[0], arg[1], arg[2]);
-        System.out.println(oC.idCuentahabiente + " " +  oC.Nombre + " " + oC.noCuenta);
-        System.out.println(oCuentahabienteEsperado.idCuentahabiente + " " +  oCuentahabienteEsperado.Nombre + " " + oCuentahabienteEsperado.noCuenta);
+//        Cuentahabiente oCuentahabienteEsperado = new Cuentahabiente("3", "Rodrigo", "9834");
+//        Cuentahabiente oC = new Cuentahabiente(arg[0], arg[1], arg[2]);
+//        System.out.println(oC.idCuentahabiente + " " +  oC.Nombre + " " + oC.noCuenta);
+//        System.out.println(oCuentahabienteEsperado.idCuentahabiente + " " +  oCuentahabienteEsperado.Nombre + " " + oCuentahabienteEsperado.noCuenta);
         //READ´s
         //System.out.println(historialUsuario1.readLine(9));
         /*System.out.println(historialUsuario1.readLine(1));

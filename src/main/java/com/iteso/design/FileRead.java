@@ -112,19 +112,23 @@ public class FileRead {
         else return getData(readLine(linea));
     }
     
-    // Obtener la informaciï¿½n de un cuentahabiente
+    // Obtener la información de un cuentahabiente
     public Cuentahabiente getCuentahabienteInfo (int idCuentahabiente){
     	String [] arrCuentahabienteInfo;
-    	
-    	if (idCuentahabiente == 0)
-    		arrCuentahabienteInfo = getData(readlastLine());
-    	else
-    		arrCuentahabienteInfo = getData(readLine(idCuentahabiente));
-    	
-    	if (arrCuentahabienteInfo == null)
+    	try{
+	    	if (idCuentahabiente == 0)
+	    		arrCuentahabienteInfo = getData(readlastLine());
+	    	else
+	    		arrCuentahabienteInfo = getData(readLine(idCuentahabiente));
+	    	
+	    	if (arrCuentahabienteInfo == null)
+	    		return null;
+	    	else
+	    		return new Cuentahabiente(arrCuentahabienteInfo[0], arrCuentahabienteInfo[1], arrCuentahabienteInfo[2]);
+    	}
+    	catch(Exception e){
     		return null;
-    	else
-    		return new Cuentahabiente(arrCuentahabienteInfo[0], arrCuentahabienteInfo[1], arrCuentahabienteInfo[2]);
+    	}
     }
 
     public int getIdMovimiento(int linea){

@@ -10,8 +10,15 @@ public class Recibo {
 	
 	public void imprimirHistorial(int idCuentahabiente){
 		String sMovimiento = new String();
+		Cuentahabiente oCuentahabiente;
 		
-		imprimirInfoGeneral(idCuentahabiente);
+		oCuentahabiente = validarCuentahabiente(idCuentahabiente);
+		if (oCuentahabiente == null){
+			System.out.println("Cuentahabiente no válido");
+			return;
+		}
+		
+		imprimirInfoGeneral(oCuentahabiente);
 		System.out.println("HISTORIAL DE MOVIMIENTOS");
 		imprimirEncabezadoMovimiento();
 		// Abrir el archivo correspondiente
@@ -29,10 +36,13 @@ public class Recibo {
 	
 	public void imprimirUltimoMovimiento(int idCuentahabiente){
 		String sMovimiento;
-				
-		// Imprimir encabezado general
-		imprimirInfoGeneral(idCuentahabiente);
-		System.out.println("ï¿½LTIMO MOVIMIENTO");
+		Cuentahabiente oCuentahabiente;
+		oCuentahabiente = validarCuentahabiente(idCuentahabiente);
+		if (oCuentahabiente == null){
+			System.out.println("Cuentahabiente no válido");
+			return;
+		}
+		System.out.println("ÚLTIMO MOVIMIENTO");
 		imprimirEncabezadoMovimiento();
 		
 		// Abrir el archivo correspondiente
@@ -49,7 +59,12 @@ public class Recibo {
 	
 	public void imprimirSaldo (int idCuentahabiente){
 		// Imprimir encabezado general
-		imprimirInfoGeneral(idCuentahabiente);
+		Cuentahabiente oCuentahabiente;
+		oCuentahabiente = validarCuentahabiente(idCuentahabiente);
+		if (oCuentahabiente == null){
+			System.out.println("Cuentahabiente no válido");
+			return;
+		}
 		
 		// Imprimir recibo desaldo
 		System.out.print("SALDO ACTUAL:");
@@ -65,13 +80,9 @@ public class Recibo {
 		System.out.println();
 	}
 	
-	private void imprimirInfoGeneral(int idCuentahabiente){
+	private void imprimirInfoGeneral(Cuentahabiente oCuentahabiente){
 		DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
 		Date date = new Date();
-		
-		this.fileReader = new FileRead("resources\\main\\java\\com\\iteso\\cuentahabiente\\cuentahabiente.csv");
-		// Obtener la informaciï¿½n bï¿½sica del cuentahabiente
-		Cuentahabiente oCuentahabiente = this.fileReader.getCuentahabienteInfo(idCuentahabiente);
 		
 		// Imprimir encabezado del recibo
 		imprimirLinea();
@@ -89,6 +100,12 @@ public class Recibo {
 		System.out.println(dateFormat.format(date) + "\n\n"); 
 		
 		fileReader.closeFile();
+	}
+	
+	private Cuentahabiente validarCuentahabiente(int idCuentahabiente){
+		
+		this.fileReader = new FileRead("resources\\main\\java\\com\\iteso\\cuentahabiente\\cuentahabiente.csv");
+		return this.fileReader.getCuentahabienteInfo(idCuentahabiente);
 	}
 	
 	private void imprimirLinea(){
