@@ -32,7 +32,7 @@ public class FileRead_test {
         oCuentahabiente = oFileRead.getCuentahabienteInfo(3);
 		oCuentahabienteEsperado = null;
 	
-		assertEquals(null, oCuentahabienteEsperado);
+		assertNull(oCuentahabienteEsperado);
 	}
 	
 	@Test
