@@ -102,19 +102,20 @@ public class FileRead {
     // IdMovimiento, Fecha, Tipo de movimiento (retiro "0" , depósito "1"), Cantidad, SaldoAnterior, SaldoNuevo.
 
     private String[] getData(String Datos){
-        String DatosArray[] = Datos.split(",");
+       String DatosArray[] = Datos.split(",");
        return DatosArray;
     }
 
     /**Esta funcion validara la linea , en dado caso que la linea que se requiera leer sea 0 (como no es posible leer esa )leera la ultima linea*/
-    private String[] getDataValidated(int linea){
-        if(0==linea)return getData(readlastLine());
+    public String[] getDataValidated(int linea){
+        if(0 == linea)return getData(readlastLine());
         else return getData(readLine(linea));
     }
     
     // Obtener la informaci�n de un cuentahabiente
     public Cuentahabiente getCuentahabienteInfo (int idCuentahabiente){
     	String [] arrCuentahabienteInfo;
+    	
     	if (idCuentahabiente == 0)
     		arrCuentahabienteInfo = getData(readlastLine());
     	else
@@ -122,9 +123,8 @@ public class FileRead {
     	
     	if (arrCuentahabienteInfo == null)
     		return null;
-    	else{
+    	else
     		return new Cuentahabiente(arrCuentahabienteInfo[0], arrCuentahabienteInfo[1], arrCuentahabienteInfo[2]);
-    	}
     }
 
     public int getIdMovimiento(int linea){
