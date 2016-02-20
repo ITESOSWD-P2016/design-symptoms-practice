@@ -20,7 +20,7 @@ public class FileRead {
 
     static final  short DIA = 0;
     static final  short MES = 1;
-    static final  short AÑO = 2;
+    static final  short ANIO = 2;
 
     static final  short RETIRO = 0;
     static final  short DEPOSITO = 1;
@@ -112,7 +112,7 @@ public class FileRead {
         else return getData(readLine(linea));
     }
     
-    // Obtener la información de un cuentahabiente
+    // Obtener la informaciï¿½n de un cuentahabiente
     public Cuentahabiente getCuentahabienteInfo (int idCuentahabiente){
     	String [] arrCuentahabienteInfo;
     	if (idCuentahabiente == 0)
@@ -150,10 +150,10 @@ public class FileRead {
         return fechames;
     }
 
-    public int getFechaAño(int linea){
+    public int getFechaAnio(int linea){
         String Data[]= getFecha(linea);
-        int fechaaAño = Integer.parseInt(Data[AÑO]);
-        return fechaaAño;
+        int fechaaAnio = Integer.parseInt(Data[ANIO]);
+        return fechaaAnio;
     }
 
     public int getTipodemovimiento(int linea){
