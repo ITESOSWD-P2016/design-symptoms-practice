@@ -120,7 +120,7 @@ public class FileRead {
     	else
     		arrCuentahabienteInfo = getData(readLine(idCuentahabiente));
     	
-    	if (arrCuentahabienteInfo == null)
+    	if (arrCuentahabienteInfo[0] == "ERROR READING FILE")
     		return null;
     	else{
     		return new Cuentahabiente(arrCuentahabienteInfo[0], arrCuentahabienteInfo[1], arrCuentahabienteInfo[2]);
