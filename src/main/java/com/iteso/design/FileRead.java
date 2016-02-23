@@ -20,7 +20,7 @@ public class FileRead {
 
     static final  short DIA = 0;
     static final  short MES = 1;
-    static final  short AÑO = 2;
+    static final  short AÃ‘O = 2;
 
     static final  short RETIRO = 0;
     static final  short DEPOSITO = 1;
@@ -112,20 +112,21 @@ public class FileRead {
         else return getData(readLine(linea));
     }
     
-    // Obtener la información de un cuentahabiente
+    // Obtener la informacion de un cuentahabiente
     public Cuentahabiente getCuentahabienteInfo (int idCuentahabiente){
-    	String [] arrCuentahabienteInfo;
-    	if (idCuentahabiente == 0)
-    		arrCuentahabienteInfo = getData(readlastLine());
-    	else
-    		arrCuentahabienteInfo = getData(readLine(idCuentahabiente));
-    	
-    	if (arrCuentahabienteInfo == null)
-    		return null;
-    	else{
-    		return new Cuentahabiente(arrCuentahabienteInfo[0], arrCuentahabienteInfo[1], arrCuentahabienteInfo[2]);
-    	}
+        String [] arrCuentahabienteInfo;
+        if (idCuentahabiente == 0)
+            arrCuentahabienteInfo = getData(readlastLine());
+        else
+            arrCuentahabienteInfo = getData(readLine(idCuentahabiente));
+
+        if (arrCuentahabienteInfo[0] == "ERROR READING FILE")
+            return null;
+        else{
+            return new Cuentahabiente(arrCuentahabienteInfo[0], arrCuentahabienteInfo[1], arrCuentahabienteInfo[2]);
+        }
     }
+
 
     public int getIdMovimiento(int linea){
         String Data[]= getDataValidated(linea);
@@ -150,10 +151,10 @@ public class FileRead {
         return fechames;
     }
 
-    public int getFechaAño(int linea){
+    public int getFechaAÃ±o(int linea){
         String Data[]= getFecha(linea);
-        int fechaaAño = Integer.parseInt(Data[AÑO]);
-        return fechaaAño;
+        int fechaaAÃ±o = Integer.parseInt(Data[AÃ‘O]);
+        return fechaaAÃ±o;
     }
 
     public int getTipodemovimiento(int linea){
@@ -200,21 +201,6 @@ public class FileRead {
         Date date = new Date();
         DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
         return dateFormat.format(date);
-    }
-
-    public void hacerRetiro() throws IOException {
-        int cantidad = Integer.parseInt(JOptionPane.showInputDialog("Cuanto deseas retirar"));
-
-        if(cantidad%20 == 0 || cantidad%50 == 0){
-            if(getSaldonuevo(0) - cantidad<0)System.out.println("La accion que dessea hacer no es posible Usted desea retirar "+cantidad+" lo cual excede su saldo actual de " + getSaldonuevo(0));
-            else {
-                setNewHistory(getIdMovimiento(0), getSystemDate(), RETIRO, cantidad, getSaldoanterior(0), getSaldonuevo(0) - cantidad);
-                System.out.println("Felicidades se han retirado " + cantidad + " pesos con exito :3");
-            }
-        }else{
-            System.out.println("NO se puede retirar :"+cantidad);
-            System.out.println("Solo da billetes de:20,100,200,500,1000");
-        }
     }
 
 }

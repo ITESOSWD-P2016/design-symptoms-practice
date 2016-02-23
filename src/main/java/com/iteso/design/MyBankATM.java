@@ -47,12 +47,7 @@ public class MyBankATM {
             myATM.Number = myCard.askForCard();
         }
 
-
         //ATM Should Request Card
-
-            ;
-
-
 
         if (myATM.Number.startsWith("1")) {
             myATM.Type = "1";
@@ -78,6 +73,9 @@ public class MyBankATM {
             System.out.println("Thanks for typing a valid pin");
         else
             System.out.println("Sorry, that is an invalid pin");
+
+
+
 
     }
 
