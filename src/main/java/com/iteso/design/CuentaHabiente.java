@@ -3,7 +3,7 @@ package com.iteso.design;
 /**
  * Created by Sabino on 09/02/2016.
  */
-public class Cuentahabiente {
+class Cuentahabiente {
     public String idCuentahabiente;
     public String Nombre;
     public String noCuenta;
