@@ -1,4 +1,6 @@
-package com.iteso.design;
+package com.iteso.design.tools;
+
+import com.iteso.design.Cuentahabiente;
 
 import javax.swing.*;
 import java.io.*;
@@ -20,7 +22,7 @@ public class FileRead {
 
     static final  short DIA = 0;
     static final  short MES = 1;
-    static final  short AÑO = 2;
+    static final  short Ano = 2;
 
     static final  short RETIRO = 0;
     static final  short DEPOSITO = 1;
@@ -112,7 +114,7 @@ public class FileRead {
         else return getData(readLine(linea));
     }
     
-    // Obtener la información de un cuentahabiente
+    // Obtener la informaciï¿½n de un cuentahabiente
     public Cuentahabiente getCuentahabienteInfo (int idCuentahabiente){
     	String [] arrCuentahabienteInfo;
     	if (idCuentahabiente == 0)
@@ -150,10 +152,10 @@ public class FileRead {
         return fechames;
     }
 
-    public int getFechaAño(int linea){
+    public int getFechaAno(int linea){
         String Data[]= getFecha(linea);
-        int fechaaAño = Integer.parseInt(Data[AÑO]);
-        return fechaaAño;
+        int fechaaAno = Integer.parseInt(Data[Ano]);
+        return fechaaAno;
     }
 
     public int getTipodemovimiento(int linea){
@@ -202,19 +204,6 @@ public class FileRead {
         return dateFormat.format(date);
     }
 
-    public void hacerRetiro() throws IOException {
-        int cantidad = Integer.parseInt(JOptionPane.showInputDialog("Cuanto deseas retirar"));
 
-        if(cantidad%20 == 0 || cantidad%50 == 0){
-            if(getSaldonuevo(0) - cantidad<0)System.out.println("La accion que dessea hacer no es posible Usted desea retirar "+cantidad+" lo cual excede su saldo actual de " + getSaldonuevo(0));
-            else {
-                setNewHistory(getIdMovimiento(0), getSystemDate(), RETIRO, cantidad, getSaldoanterior(0), getSaldonuevo(0) - cantidad);
-                System.out.println("Felicidades se han retirado " + cantidad + " pesos con exito :3");
-            }
-        }else{
-            System.out.println("NO se puede retirar :"+cantidad);
-            System.out.println("Solo da billetes de:20,100,200,500,1000");
-        }
-    }
 
 }

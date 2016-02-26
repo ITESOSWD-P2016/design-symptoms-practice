@@ -1,11 +1,13 @@
-package com.iteso.design;
+package com.iteso.design.Pin.impl;
+
+import com.iteso.design.Pin.iPin;
 
 import java.util.Scanner;
 
 /**
  * Created by lnvitado on 29/01/2016.
  */
-public class PIN_4digits implements PIN {
+public class PIN_4digits implements iPin.PIN {
 
 
 

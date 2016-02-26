@@ -1,5 +1,7 @@
 package com.iteso.design;
 
+import com.iteso.design.tools.FileRead;
+
 import java.util.Date;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -32,7 +34,7 @@ public class Recibo {
 				
 		// Imprimir encabezado general
 		imprimirInfoGeneral(idCuentahabiente);
-		System.out.println("ÚLTIMO MOVIMIENTO");
+		System.out.println("ï¿½LTIMO MOVIMIENTO");
 		imprimirEncabezadoMovimiento();
 		
 		// Abrir el archivo correspondiente
@@ -70,7 +72,7 @@ public class Recibo {
 		Date date = new Date();
 		
 		this.fileReader = new FileRead("resources\\main\\java\\com\\iteso\\cuentahabiente\\cuentahabiente.csv");
-		// Obtener la información básica del cuentahabiente
+		// Obtener la informaciï¿½n bï¿½sica del cuentahabiente
 		Cuentahabiente oCuentahabiente = this.fileReader.getCuentahabienteInfo(idCuentahabiente);
 		
 		// Imprimir encabezado del recibo
@@ -111,12 +113,15 @@ public class Recibo {
 		int noCampos = 6;
 		String [] arrMovimiento = new String[noCampos];
 		arrMovimiento = sMovimiento.split(",");
-		
-		switch (arrMovimiento[2]){
-			case "0" : arrMovimiento[2] = "Retiro"; break;
-			case "1" : arrMovimiento[2] = "Depósito"; break;
-			case "2" : arrMovimiento[2] = "Donativo"; break;
-			case "3" : arrMovimiento[2] = "Recarga tel"; break;
+
+		if (arrMovimiento[2].equals("0")) {
+			arrMovimiento[2] = "Retiro";
+		} else if (arrMovimiento[2].equals("1")) {
+			arrMovimiento[2] = "Deposito";
+		} else if (arrMovimiento[2].equals("2")) {
+			arrMovimiento[2] = "Donativo";
+		} else if (arrMovimiento[2].equals("3")) {
+			arrMovimiento[2] = "Recarga tel";
 		}
 		
 		for (int i = 3; i < 6; i++)

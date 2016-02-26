@@ -1,5 +1,7 @@
 package com.iteso.design;
 
+import com.iteso.design.tools.FileRead;
+
 import javax.swing.*;
 import java.io.IOException;
 

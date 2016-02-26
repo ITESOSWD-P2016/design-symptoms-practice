@@ -2,7 +2,11 @@ package com.iteso.design;
 
 
 
-import java.io.IOException;
+import com.iteso.design.Pin.impl.PIN_4digits;
+import com.iteso.design.Pin.impl.PIN_6digits;
+import com.iteso.design.Pin.impl.PIN_8alphanum;
+import com.iteso.design.bankcard.BankCard;
+
 import java.util.Scanner;
 
 /**
@@ -38,12 +42,12 @@ public class MyBankATM {
 
         if(BankName == 1)
         {
-            MyBankCard myCard = new MyBankCard();
+            BankCard.MyBankCard myCard = new BankCard.MyBankCard();
             myATM.Number = myCard.askForCard();
         }
         else  if (BankName==2)
         {
-            OtherBankCard myCard = new OtherBankCard();
+            cuentahabiente.OtherBankCard myCard = new cuentahabiente.OtherBankCard();
             myATM.Number = myCard.askForCard();
         }
 
