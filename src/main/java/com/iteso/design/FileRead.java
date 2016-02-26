@@ -82,6 +82,23 @@ public class FileRead {
         return "ERROR READING FILE";
     }
 
+    int FileSize() {
+        int Max=0;
+
+        createBufferReader();
+        try {
+            while (( cadena = br.readLine()) != null) {
+
+                Max++;
+            }
+            return  Max;
+
+        }catch (IOException e) {
+            e.printStackTrace();
+        }
+        return 0;
+    }
+
     String readLine(int line) {
         createBufferReader();
         int counter = 0;
@@ -114,10 +131,10 @@ public class FileRead {
     
     // Obtener la informaci�n de un cuentahabiente
     public Cuentahabiente getCuentahabienteInfo (int idCuentahabiente){
-    	String [] arrCuentahabienteInfo;
+    	String [] arrCuentahabienteInfo = null;
     	if (idCuentahabiente == 0)
     		arrCuentahabienteInfo = getData(readlastLine());
-    	else
+    	else if (idCuentahabiente <= FileSize())
     		arrCuentahabienteInfo = getData(readLine(idCuentahabiente));
     	
     	if (arrCuentahabienteInfo == null)

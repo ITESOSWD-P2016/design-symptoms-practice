@@ -11,10 +11,20 @@ public class Cuentahabiente {
     public String nipAnterior;
     public boolean nipActivo;
 
+    public Cuentahabiente()
+    {
+
+    }
+
+
     public Cuentahabiente(String idCuentahabiente, String nombre, String noCuenta)
     {
         this.idCuentahabiente = idCuentahabiente;
         this.Nombre = nombre;
         this.noCuenta = noCuenta;
+    }
+
+    public String GetCuentahabiente(int ID){
+        return "Prueba";
     }
 }
