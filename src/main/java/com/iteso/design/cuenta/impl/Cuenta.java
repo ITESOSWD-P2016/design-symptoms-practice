@@ -1,12 +1,18 @@
-package com.iteso.design;
+package com.iteso.design.cuenta.impl;
+
+import com.iteso.design.cuenta.iCuenta;
+import com.iteso.design.tools.FileRead;
+
 
 import javax.swing.*;
 import java.io.IOException;
 
+import static com.iteso.design.tools.FileRead.*;
+
 /**
  * Created by Sabino on 09/02/2016.
  */
-public class Cuenta {
+public class Cuenta implements iCuenta {
     FileRead fileRead;
 
     public void hacerRetiro() throws IOException {
@@ -15,7 +21,7 @@ public class Cuenta {
         if(cantidad%20 == 0 || cantidad%50 == 0){
             if(fileRead.getSaldonuevo(0) - cantidad<0)System.out.println("La accion que dessea hacer no es posible Usted desea retirar "+cantidad+" lo cual excede su saldo actual de " + fileRead.getSaldonuevo(0));
             else {
-                fileRead.setNewHistory(fileRead.getIdMovimiento(0), fileRead.getSystemDate(), fileRead.RETIRO, cantidad, fileRead.getSaldoanterior(0), fileRead.getSaldonuevo(0) - cantidad);
+                fileRead.setNewHistory(fileRead.getIdMovimiento(0), fileRead.getSystemDate(), FileRead.RETIRO, cantidad, fileRead.getSaldoanterior(0), fileRead.getSaldonuevo(0) - cantidad);
                 System.out.println("Felicidades se han retirado " + cantidad + " pesos con exito :3");
             }
         }else{
@@ -24,4 +30,35 @@ public class Cuenta {
         }
     }
 
+    public String askForCard() throws IOException {
+        return null;
+    }
+
+    public void HacerRetiro() {
+
+    }
+
+    public void ChecarSaldo() {
+
+    }
+
+    public void CambiarNip() {
+
+    }
+
+    public void ImprimirRecibo() {
+
+    }
+
+    public void VerHistorial() {
+
+    }
+
+    public void HacerDonaciones() {
+
+    }
+
+    public void HacerRecargaTelefonica() {
+
+    }
 }

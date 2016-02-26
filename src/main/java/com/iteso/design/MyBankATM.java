@@ -2,7 +2,12 @@ package com.iteso.design;
 
 
 
-import java.io.IOException;
+import com.iteso.design.Pin.impl.PIN_6digits;
+import com.iteso.design.Pin.impl.PIN_8alphanum;
+import com.iteso.design.Pin.impl.PIN_4Digits;
+import com.iteso.design.bankcard.impl.MyBankCard;
+import com.iteso.design.bankcard.impl.OtherBankCard;
+
 import java.util.Scanner;
 
 /**
@@ -56,7 +61,7 @@ public class MyBankATM {
 
         if (myATM.Number.startsWith("1")) {
             myATM.Type = "1";
-            PIN_4digits myPin = new PIN_4digits();
+            PIN_4Digits myPin = new PIN_4Digits();
             myATM.Pin = myPin.AskForPin();
             valid = myPin.ValidatePin(myATM.Pin);
         }

@@ -1,4 +1,6 @@
-package com.iteso.design;
+package com.iteso.design.tools;
+
+import com.iteso.design.tools.FileRead;
 
 import java.io.IOException;
 

@@ -1,10 +1,19 @@
-package com.iteso.design;
+package com.iteso.design.cuenta.impl;
 
+import com.iteso.design.cuenta.iRecibo;
+import com.iteso.design.tools.FileRead;
+
+
+
+import com.iteso.design.cuentahabiente.Cuentahabiente;
+import com.iteso.design.tools.FileRead;
+
+import java.io.IOException;
 import java.util.Date;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 
-public class Recibo {
+public class Recibo implements iRecibo {
 	FileRead fileReader;
 	private final int iAnchoColumna = 15;
 	
@@ -148,5 +157,33 @@ public class Recibo {
 		System.out.println();
 		imprimirLinea();
 	}
+
+    public String askForCard() throws IOException {
+        return null;
+    }
+
+    public void ImprimirReciboSaldo() {
+
+    }
+
+    public void ImprimirReciboRetiro() {
+
+    }
+
+    public void ImprimirReciboHistorial() {
+
+    }
+
+    public void ImprimirReciboSaldoTelefonico() {
+
+    }
+
+    public void ImprimirReciboDonativo() {
+
+    }
+
+    public void ImprimirReciboUltimoMovimiento() {
+
+    }
 }
 

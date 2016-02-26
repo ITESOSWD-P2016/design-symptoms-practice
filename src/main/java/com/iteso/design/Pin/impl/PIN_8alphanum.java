@@ -1,4 +1,4 @@
-package com.iteso.design;
+package com.iteso.design.Pin.impl;
 
 import java.util.Scanner;
 
@@ -21,12 +21,12 @@ public class PIN_8alphanum {
         boolean validity=false;
 
         if (PIN.matches("^(\\w\\w\\w\\w\\w\\w\\w\\w)$")) {
-            System.out.println("PIN Correcto: " + PIN);
+            System.out.println("iPIN Correcto: " + PIN);
             validity=true;
         }
 
         else
-            System.out.println("ERROR: PIN Incorrecto: " + PIN);
+            System.out.println("ERROR: iPIN Incorrecto: " + PIN);
 
         return validity;
     }
