@@ -1,9 +1,12 @@
 package com.iteso.design;
 
-
-
-import java.io.IOException;
 import java.util.Scanner;
+
+import com.iteso.design.bankCard.impl.MyBankCard;
+import com.iteso.design.bankCard.impl.OtherBankCard;
+import com.iteso.design.pin.impl.PIN_4digits;
+import com.iteso.design.pin.impl.PIN_6digits;
+import com.iteso.design.pin.impl.PIN_8alphanum;
 
 /**
  * Created with IntelliJ IDEA.
@@ -22,7 +25,8 @@ public class MyBankATM {
     }
     public static void main(String args[]){
 
-        Scanner scanner = new Scanner(System.in);
+        @SuppressWarnings("resource")
+		Scanner scanner = new Scanner(System.in);
         int BankName = 1;
 
         MyBankATM myATM = new MyBankATM();

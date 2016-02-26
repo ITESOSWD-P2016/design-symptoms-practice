@@ -1,16 +1,21 @@
-package com.iteso.design;
+package com.iteso.design.cuenta.impl;
 
 import java.util.Date;
+
+import com.iteso.design.cuenta.iRecibo;
+import com.iteso.design.cuentahabiente.impl.MyBankCuentahabiente;
+import com.iteso.design.tools.FileRead;
+
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 
-public class Recibo {
+public class Recibo implements iRecibo {
 	FileRead fileReader;
 	private final int iAnchoColumna = 15;
 	
 	public void imprimirHistorial(int idCuentahabiente){
 		String sMovimiento = new String();
-		Cuentahabiente oCuentahabiente;
+		MyBankCuentahabiente oCuentahabiente;
 		
 		oCuentahabiente = validarCuentahabiente(idCuentahabiente);
 		if (oCuentahabiente == null){
@@ -36,7 +41,7 @@ public class Recibo {
 	
 	public void imprimirUltimoMovimiento(int idCuentahabiente){
 		String sMovimiento;
-		Cuentahabiente oCuentahabiente;
+		MyBankCuentahabiente oCuentahabiente;
 		oCuentahabiente = validarCuentahabiente(idCuentahabiente);
 		if (oCuentahabiente == null){
 			System.out.println("Cuentahabiente no válido");
@@ -59,7 +64,7 @@ public class Recibo {
 	
 	public void imprimirSaldo (int idCuentahabiente){
 		// Imprimir encabezado general
-		Cuentahabiente oCuentahabiente;
+		MyBankCuentahabiente oCuentahabiente;
 		oCuentahabiente = validarCuentahabiente(idCuentahabiente);
 		if (oCuentahabiente == null){
 			System.out.println("Cuentahabiente no válido");
@@ -80,7 +85,7 @@ public class Recibo {
 		System.out.println();
 	}
 	
-	private void imprimirInfoGeneral(Cuentahabiente oCuentahabiente){
+	private void imprimirInfoGeneral(MyBankCuentahabiente oCuentahabiente){
 		DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
 		Date date = new Date();
 		
@@ -102,7 +107,7 @@ public class Recibo {
 		fileReader.closeFile();
 	}
 	
-	private Cuentahabiente validarCuentahabiente(int idCuentahabiente){
+	private MyBankCuentahabiente validarCuentahabiente(int idCuentahabiente){
 		
 		this.fileReader = new FileRead("resources\\main\\java\\com\\iteso\\cuentahabiente\\cuentahabiente.csv");
 		return this.fileReader.getCuentahabienteInfo(idCuentahabiente);
@@ -164,6 +169,24 @@ public class Recibo {
 		imprimirIndentacion(iAnchoColumna - new String("SaldoNuevo").length());
 		System.out.println();
 		imprimirLinea();
+	}
+
+	@Override
+	public void imprimirRetiro() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void imprimirSaldoTelefonico() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void imprimirDonativo() {
+		// TODO Auto-generated method stub
+		
 	}
 }
 

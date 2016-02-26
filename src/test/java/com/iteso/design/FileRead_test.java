@@ -5,12 +5,16 @@ import static org.junit.Assert.*;
 
 import org.junit.Before;
 import org.junit.Test;
+
+import com.iteso.design.cuentahabiente.impl.MyBankCuentahabiente;
+import com.iteso.design.tools.FileRead;
+
 import static java.io.File.separator;
 
 public class FileRead_test {
 	FileRead oFileRead;
-	Cuentahabiente oCuentahabiente;
-	Cuentahabiente oCuentahabienteEsperado;
+	MyBankCuentahabiente oCuentahabiente;
+	MyBankCuentahabiente oCuentahabienteEsperado;
 	
 	@Before
 	public void SetUp(){
@@ -22,7 +26,7 @@ public class FileRead_test {
 	@Test
 	public void test_getUltimoCuentahabiente(){
         oCuentahabiente = oFileRead.getCuentahabienteInfo(0);
-		oCuentahabienteEsperado = new Cuentahabiente("3", "Rodrigo", "9834");
+		oCuentahabienteEsperado = new MyBankCuentahabiente("3", "Rodrigo", "9834");
 	
 		assertEquals(oCuentahabienteEsperado, oCuentahabiente);
 	}
@@ -38,7 +42,7 @@ public class FileRead_test {
 	@Test
 	public void test_getCuentahabiente(){
         oCuentahabiente = oFileRead.getCuentahabienteInfo(1);
-		oCuentahabienteEsperado = new Cuentahabiente("3", "Rodrigo", "9834");
+		oCuentahabienteEsperado = new MyBankCuentahabiente("3", "Rodrigo", "9834");
 	
 		assertEquals(oCuentahabienteEsperado, oCuentahabiente);
 	}

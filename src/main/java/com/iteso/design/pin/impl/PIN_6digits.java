@@ -1,4 +1,4 @@
-package com.iteso.design;
+package com.iteso.design.pin.impl;
 
 import java.util.Scanner;
 
@@ -10,7 +10,8 @@ public class PIN_6digits {
 
         public String AskForPin() {
             String pin = null;
-            Scanner scanner = new Scanner(System.in);
+            @SuppressWarnings("resource")
+			Scanner scanner = new Scanner(System.in);
             System.out.println("Please Type Pin");
             System.out.println(">> ");
             pin = scanner.nextLine();

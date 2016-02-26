@@ -2,6 +2,8 @@ package com.iteso.design;
 
 import java.io.IOException;
 
+import com.iteso.design.tools.FileRead;
+
 /**
  * Created by Sabino on 05/02/2016.
  */

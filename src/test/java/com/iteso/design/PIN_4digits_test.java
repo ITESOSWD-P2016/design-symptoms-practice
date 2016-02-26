@@ -1,5 +1,6 @@
 package com.iteso.design;
 
+import com.iteso.design.pin.PIN;
 
 /**
  * Created by lnvitado on 29/01/2016.

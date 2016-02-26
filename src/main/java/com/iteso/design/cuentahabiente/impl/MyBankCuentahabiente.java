@@ -1,9 +1,11 @@
-package com.iteso.design;
+package com.iteso.design.cuentahabiente.impl;
+
+import com.iteso.design.cuentahabiente.iCuentahabiente;
 
 /**
  * Created by Sabino on 09/02/2016.
  */
-public class Cuentahabiente {
+public class MyBankCuentahabiente implements iCuentahabiente {
 	public String idCuentahabiente;
 	public String Nombre;
 	public String noCuenta;
@@ -59,7 +61,7 @@ public class Cuentahabiente {
 		this.nipActivo = nipActivo;
 	}
 
-	public Cuentahabiente(String idCuentahabiente, String nombre, String noCuenta)
+	public MyBankCuentahabiente(String idCuentahabiente, String nombre, String noCuenta)
 	{
 		this.idCuentahabiente = idCuentahabiente;
 		this.Nombre = nombre;
@@ -68,9 +70,33 @@ public class Cuentahabiente {
 	
     @Override
     public boolean equals(Object obj) {
-    	Cuentahabiente oCuentahabiente = (Cuentahabiente) obj;
+    	MyBankCuentahabiente oCuentahabiente = (MyBankCuentahabiente) obj;
         return ((this.idCuentahabiente.equals(oCuentahabiente.idCuentahabiente))
         		&& (this.Nombre.equals(oCuentahabiente.Nombre))
         		&& (this.noCuenta.equals(oCuentahabiente.noCuenta)));
     }
+
+	@Override
+	public void verInfoCuentahabiente() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void verInfoCuenta() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void verInfoBanco() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public boolean cambiarNIPCuenta() {
+		// TODO Auto-generated method stub
+		return false;
+	}
 }

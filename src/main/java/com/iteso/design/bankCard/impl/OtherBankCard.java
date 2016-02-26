@@ -1,16 +1,17 @@
-package com.iteso.design;
-
-import java.io.IOException;
+package com.iteso.design.bankCard.impl;
 import java.util.Scanner;
+
+import com.iteso.design.bankCard.iBankCard;
 
 /**
  * Created by rvillalobos on 1/26/16.
  */
-public class OtherBankCard implements BankCard{
+public class OtherBankCard implements iBankCard{
 
 
     public String askForCard() {
-        Scanner scanner = new Scanner(System.in);
+        @SuppressWarnings("resource")
+		Scanner scanner = new Scanner(System.in);
         String VerifiedCardNumber;
 
         System.out.println("Please Insert Card (The first numbers is your Card Type)");
