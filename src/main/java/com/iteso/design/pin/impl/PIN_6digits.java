@@ -1,4 +1,4 @@
-package com.iteso.design;
+package com.iteso.design.pin.impl;
 
 import java.util.Scanner;
 
@@ -21,12 +21,12 @@ public class PIN_6digits {
             boolean validity=false;
 
             if (PIN.matches("^(\\d\\d\\d\\d\\d\\d)$")) {
-                System.out.println("PIN Correcto: " + PIN);
+                System.out.println("iPIN Correcto: " + PIN);
                 validity=true;
             }
 
             else
-                System.out.println("ERROR: PIN Incorrecto: " + PIN);
+                System.out.println("ERROR: iPIN Incorrecto: " + PIN);
 
             return validity;
         }

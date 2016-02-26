@@ -1,4 +1,4 @@
-package com.iteso.design;
+package com.iteso.design.bankcard;
 
 import java.io.IOException;
 

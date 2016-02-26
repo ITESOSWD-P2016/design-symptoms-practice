@@ -1,11 +1,12 @@
-package com.iteso.design;
+package com.iteso.design.cuenta.impl;
+
+import com.iteso.design.tools.FileRead;
 
 import javax.swing.*;
 import java.io.IOException;
 
-/**
- * Created by Sabino on 09/02/2016.
- */
+// cambiar nip, imprimirsaldo
+
 public class Cuenta {
     FileRead fileRead;
 

@@ -1,8 +1,7 @@
-package com.iteso.design;
+package com.iteso.design.cuentahabiente.impl;
 
-/**
- * Created by Sabino on 09/02/2016.
- */
+//cambiar_nip
+
 public class Cuentahabiente {
     public String idCuentahabiente;
     public String Nombre;
@@ -23,6 +22,10 @@ public class Cuentahabiente {
         this.Nombre = nombre;
         this.noCuenta = noCuenta;
     }
+
+
+
+
 
     public String GetCuentahabiente(int ID){
         return "Prueba";

@@ -1,10 +1,11 @@
 package com.iteso.design;
 
 
+import com.iteso.design.cuentahabiente.impl.Cuentahabiente;
+import com.iteso.design.tools.FileRead;
 import org.junit.Test;
 import org.mockito.Matchers;
 import org.mockito.Mockito;
-import org.mockito.Mockito.*;
 
 import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;

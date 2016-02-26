@@ -1,4 +1,6 @@
-package com.iteso.design;
+package com.iteso.design.tools;
+
+import com.iteso.design.cuentahabiente.impl.Cuentahabiente;
 
 import javax.swing.*;
 import java.io.*;
@@ -22,7 +24,7 @@ public class FileRead {
     static final  short MES = 1;
     static final  short ANIO = 2;
 
-    static final  short RETIRO = 0;
+    static public final  short RETIRO = 0;
     static final  short DEPOSITO = 1;
 
 
@@ -67,7 +69,7 @@ public class FileRead {
         bw = new BufferedWriter(fw);
     }
 
-    String readlastLine() {
+    public String readlastLine() {
         String last = "";
         createBufferReader();
         try {
@@ -99,7 +101,7 @@ public class FileRead {
         return 0;
     }
 
-    String readLine(int line) {
+    public String readLine(int line) {
         createBufferReader();
         int counter = 0;
         try {
