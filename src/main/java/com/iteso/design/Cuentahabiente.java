@@ -11,6 +11,54 @@ public class Cuentahabiente {
 	public String nipAnterior;
 	public boolean nipActivo;
 	
+	public String getIdCuentahabiente() {
+		return idCuentahabiente;
+	}
+
+	public void setIdCuentahabiente(String idCuentahabiente) {
+		this.idCuentahabiente = idCuentahabiente;
+	}
+
+	public String getNombre() {
+		return Nombre;
+	}
+
+	public void setNombre(String nombre) {
+		Nombre = nombre;
+	}
+
+	public String getNoCuenta() {
+		return noCuenta;
+	}
+
+	public void setNoCuenta(String noCuenta) {
+		this.noCuenta = noCuenta;
+	}
+
+	public String getNipActual() {
+		return nipActual;
+	}
+
+	public void setNipActual(String nipActual) {
+		this.nipActual = nipActual;
+	}
+
+	public String getNipAnterior() {
+		return nipAnterior;
+	}
+
+	public void setNipAnterior(String nipAnterior) {
+		this.nipAnterior = nipAnterior;
+	}
+
+	public boolean isNipActivo() {
+		return nipActivo;
+	}
+
+	public void setNipActivo(boolean nipActivo) {
+		this.nipActivo = nipActivo;
+	}
+
 	public Cuentahabiente(String idCuentahabiente, String nombre, String noCuenta)
 	{
 		this.idCuentahabiente = idCuentahabiente;

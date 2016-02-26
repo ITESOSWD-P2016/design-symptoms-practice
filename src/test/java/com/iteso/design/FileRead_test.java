@@ -43,5 +43,4 @@ public class FileRead_test {
 		assertEquals(oCuentahabienteEsperado, oCuentahabiente);
 	}
 	
-	
 }
