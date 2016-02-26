@@ -1,13 +1,16 @@
-package com.iteso.design;
+package com.iteso.design.cuenta.impl;
+
+import com.iteso.design.cuenta.iRecibo;
+import com.iteso.design.tools.FileRead;
+import com.iteso.design.cuentahabiente.CuentaHabiente;
 
 import java.util.Date;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 
-public class Recibo {
+public class Recibo implements iRecibo {
 	FileRead fileReader;
-	private final int iAnchoColumna = 15;
-	
+
 	public void imprimirHistorial(int idCuentahabiente){
 		String sMovimiento = new String();
 		
@@ -65,13 +68,13 @@ public class Recibo {
 		System.out.println();
 	}
 	
-	private void imprimirInfoGeneral(int idCuentahabiente){
+	 public void imprimirInfoGeneral(int idCuentahabiente){
 		DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
 		Date date = new Date();
 		
 		this.fileReader = new FileRead("resources\\main\\java\\com\\iteso\\cuentahabiente\\cuentahabiente.csv");
 		// Obtener la informaci�n b�sica del cuentahabiente
-		Cuentahabiente oCuentahabiente = this.fileReader.getCuentahabienteInfo(idCuentahabiente);
+		CuentaHabiente oCuentahabiente = this.fileReader.getCuentahabienteInfo(idCuentahabiente);
 		
 		// Imprimir encabezado del recibo
 		imprimirLinea();
@@ -91,23 +94,23 @@ public class Recibo {
 		fileReader.closeFile();
 	}
 	
-	private void imprimirLinea(){
+	public void imprimirLinea(){
 		for (int i = 0; i < 30; i++) System.out.print("---");
 		System.out.println();
 	}
 	
-	private void imprimirIndentacion(int i){
+	public void imprimirIndentacion(int i){
 		for(int j = 0; j < i; j++) System.out.print(" ");
 	}
 	
-	private String obtenerNombreHistorial(int idCuentahabiente){
+	public String obtenerNombreHistorial(int idCuentahabiente){
 		StringBuilder sFile = new StringBuilder("resources\\main\\java\\com\\iteso\\cuentahabiente\\historial\\");
 		sFile.append(String.format("%04d", idCuentahabiente));
 		sFile.append(".csv");
 		return sFile.toString();
 	}
 	
-	private void imprimirMovimiento(String sMovimiento){
+	public void imprimirMovimiento(String sMovimiento){
 		int noCampos = 6;
 		String [] arrMovimiento = new String[noCampos];
 		arrMovimiento = sMovimiento.split(",");
@@ -132,7 +135,7 @@ public class Recibo {
 		System.out.println();
 	}
 	
-	private void imprimirEncabezadoMovimiento(){
+	public void imprimirEncabezadoMovimiento(){
 		System.out.print("NoMovimiento");
 		imprimirIndentacion(iAnchoColumna - new String("NoMovimiento").length());
 		System.out.print("Fecha");

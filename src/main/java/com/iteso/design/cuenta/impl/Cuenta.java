@@ -1,4 +1,7 @@
-package com.iteso.design;
+package com.iteso.design.cuenta.impl;
+
+import com.iteso.design.cuenta.iCuenta;
+import com.iteso.design.tools.FileRead;
 
 import javax.swing.*;
 import java.io.IOException;
@@ -6,7 +9,7 @@ import java.io.IOException;
 /**
  * Created by Sabino on 09/02/2016.
  */
-public class Cuenta {
+public class Cuenta implements iCuenta {
     FileRead fileRead;
 
     public void hacerRetiro() throws IOException {

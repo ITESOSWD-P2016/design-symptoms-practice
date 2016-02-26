@@ -1,9 +1,9 @@
-package com.iteso.design;
+package com.iteso.design.cuentahabiente;
 
 /**
  * Created by Sabino on 09/02/2016.
  */
-class Cuentahabiente {
+public class CuentaHabiente {
     public String idCuentahabiente;
     public String Nombre;
     public String noCuenta;
@@ -11,7 +11,7 @@ class Cuentahabiente {
     public String nipAnterior;
     public boolean nipActivo;
 
-    public Cuentahabiente(String idCuentahabiente, String nombre, String noCuenta)
+    public CuentaHabiente(String idCuentahabiente, String nombre, String noCuenta)
     {
         this.idCuentahabiente = idCuentahabiente;
         this.Nombre = nombre;

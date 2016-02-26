@@ -1,4 +1,8 @@
 package com.iteso.design;
+import com.iteso.design.cuentahabiente.CuentaHabiente;
+import com.iteso.design.pin.impl.PIN_4digits;
+import com.iteso.design.pin.PIN;
+import com.iteso.design.tools.FileRead;
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mockito;
@@ -21,8 +25,8 @@ public class FileReadTest {
     @Test
     public void testReadRealUser(){
         FileRead fileRead = new FileRead("resources\\main\\java\\com\\iteso\\cuentahabiente\\cuentahabiente.csv");
-        Cuentahabiente cuentahabiente;
-        Cuentahabiente cuentahabienteEsperado = new Cuentahabiente("03","Rodrigo","246313509760");
+        CuentaHabiente cuentahabiente;
+        CuentaHabiente cuentahabienteEsperado = new CuentaHabiente("03","Rodrigo","246313509760");
 
         cuentahabiente = fileRead.getCuentahabienteInfo(1);
         String esperado = cuentahabienteEsperado.idCuentahabiente + cuentahabienteEsperado.Nombre + cuentahabienteEsperado.noCuenta;
@@ -34,8 +38,8 @@ public class FileReadTest {
     @Test
     public void tesUltimoCuentahabiente(){
         FileRead fileRead = new FileRead("resources\\main\\java\\com\\iteso\\cuentahabiente\\cuentahabiente.csv");
-        Cuentahabiente cuentahabiente;
-        Cuentahabiente cuentahabienteEsperado = new Cuentahabiente("03","Rodrigo","246313509760");
+        CuentaHabiente cuentahabiente;
+        CuentaHabiente cuentahabienteEsperado = new CuentaHabiente("03","Rodrigo","246313509760");
 
         cuentahabiente = fileRead.getCuentahabienteInfo(0);
         String esperado = cuentahabienteEsperado.idCuentahabiente + cuentahabienteEsperado.Nombre + cuentahabienteEsperado.noCuenta;
@@ -47,7 +51,7 @@ public class FileReadTest {
     @Test
     public void testReadUnrealUser(){
         FileRead fileRead = new FileRead("resources\\main\\java\\com\\iteso\\cuentahabiente\\cuentahabiente.csv");
-        Cuentahabiente cuentahabiente;
+        CuentaHabiente cuentahabiente;
         cuentahabiente = fileRead.getCuentahabienteInfo(8);
 
         assertNull(cuentahabiente);

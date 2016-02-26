@@ -1,6 +1,7 @@
-package com.iteso.design;
+package com.iteso.design.tools;
 
-import javax.swing.*;
+import com.iteso.design.cuentahabiente.CuentaHabiente;
+
 import java.io.*;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -22,8 +23,8 @@ public class FileRead {
     static final  short MES = 1;
     static final  short AÑO = 2;
 
-    static final  short RETIRO = 0;
-    static final  short DEPOSITO = 1;
+    public static final  short RETIRO = 0;
+    public static final  short DEPOSITO = 1;
 
 
     File archivo;
@@ -67,7 +68,7 @@ public class FileRead {
         bw = new BufferedWriter(fw);
     }
 
-    String readlastLine() {
+    public String readlastLine() {
         String last = "";
         createBufferReader();
         try {
@@ -82,7 +83,7 @@ public class FileRead {
         return "ERROR READING FILE";
     }
 
-    String readLine(int line) {
+    public String readLine(int line) {
         createBufferReader();
         int counter = 0;
         try {
@@ -113,7 +114,7 @@ public class FileRead {
     }
     
     // Obtener la informacion de un cuentahabiente
-    public Cuentahabiente getCuentahabienteInfo (int idCuentahabiente){
+    public CuentaHabiente getCuentahabienteInfo (int idCuentahabiente){
         String [] arrCuentahabienteInfo;
         if (idCuentahabiente == 0)
             arrCuentahabienteInfo = getData(readlastLine());
@@ -123,7 +124,7 @@ public class FileRead {
         if (arrCuentahabienteInfo[0] == "ERROR READING FILE")
             return null;
         else{
-            return new Cuentahabiente(arrCuentahabienteInfo[0], arrCuentahabienteInfo[1], arrCuentahabienteInfo[2]);
+            return new CuentaHabiente(arrCuentahabienteInfo[0], arrCuentahabienteInfo[1], arrCuentahabienteInfo[2]);
         }
     }
 
