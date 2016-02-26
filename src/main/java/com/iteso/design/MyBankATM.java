@@ -5,6 +5,12 @@ package com.iteso.design;
 import java.io.IOException;
 import java.util.Scanner;
 
+import com.iteso.design.bankcard.impl.MyBankCard;
+import com.iteso.design.bankcard.impl.OtherBankCard;
+import com.iteso.design.pin.impl.PIN_4digits;
+import com.iteso.design.pin.impl.PIN_6digits;
+import com.iteso.design.pin.impl.PIN_8alphanum;
+
 /**
  * Created with IntelliJ IDEA.
  * User: rvillalobos

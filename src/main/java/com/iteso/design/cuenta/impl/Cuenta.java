@@ -1,12 +1,16 @@
-package com.iteso.design;
+package com.iteso.design.cuenta.impl;
 
 import javax.swing.*;
+
+import com.iteso.design.cuenta.iCuenta;
+import com.iteso.design.tools.FileRead;
+
 import java.io.IOException;
 
 /**
  * Created by Sabino on 09/02/2016.
  */
-public class Cuenta {
+public class Cuenta implements iCuenta {
     FileRead fileRead;
 
     public void hacerRetiro() throws IOException {
@@ -23,5 +27,30 @@ public class Cuenta {
             System.out.println("Solo da billetes de:20,100,200,500,1000");
         }
     }
+
+	public void imprimirRecibo() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void cambiarNIP() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void verHistorial() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void hacerDonacion() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void ponerSaldoTelefonico() {
+		// TODO Auto-generated method stub
+		
+	}
 
 }

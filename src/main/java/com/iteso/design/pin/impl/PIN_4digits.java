@@ -1,11 +1,14 @@
-package com.iteso.design;
+package com.iteso.design.pin.impl;
 
 import java.util.Scanner;
+
+import com.iteso.design.pin.iPIN;
 
 /**
  * Created by lnvitado on 29/01/2016.
  */
-public class PIN_8alphanum {
+public class PIN_4digits implements iPIN {
+
 
 
     public String AskForPin() {
@@ -20,16 +23,15 @@ public class PIN_8alphanum {
     public boolean ValidatePin(String PIN) {
         boolean validity=false;
 
-        if (PIN.matches("^(\\w\\w\\w\\w\\w\\w\\w\\w)$")) {
-            System.out.println("PIN Correcto: " + PIN);
-            validity=true;
-        }
+                if (PIN.matches("^(\\d\\d\\d\\d)$")) {
+                    System.out.println("PIN Correcto: " + PIN);
+                    validity=true;
+                }
 
-        else
-            System.out.println("ERROR: PIN Incorrecto: " + PIN);
+                else
+                    System.out.println("ERROR: PIN Incorrecto: " + PIN);
 
         return validity;
     }
-
 
 }

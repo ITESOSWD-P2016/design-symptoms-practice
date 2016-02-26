@@ -2,6 +2,10 @@ package com.iteso.design;
 
 
 import org.junit.Test;
+
+import com.iteso.design.cuentahabiente.impl.Cuentahabiente;
+import com.iteso.design.tools.FileRead;
+
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
 import static java.io.File.separator;

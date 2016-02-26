@@ -1,6 +1,9 @@
-package com.iteso.design;
+package com.iteso.design.tools;
 
 import javax.swing.*;
+
+import com.iteso.design.cuentahabiente.impl.Cuentahabiente;
+
 import java.io.*;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -23,7 +26,7 @@ public class FileRead {
     static final  short MES = 1;
     static final  short ANIO = 2;
 
-    static final  short RETIRO = 0;
+    public static final  short RETIRO = 0;
     static final  short DEPOSITO = 1;
 
 
@@ -68,7 +71,7 @@ public class FileRead {
         bw = new BufferedWriter(fw);
     }
 
-    String readlastLine() {
+    public String readlastLine() {
         String last = "";
         createBufferReader();
         try {
@@ -83,7 +86,7 @@ public class FileRead {
         return "ERROR READING FILE";
     }
 
-    String readLine(int line) {
+    public String readLine(int line) {
         createBufferReader();
         int counter = 0;
         try {

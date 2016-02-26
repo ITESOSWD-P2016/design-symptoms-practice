@@ -1,12 +1,14 @@
-package com.iteso.design;
+package com.iteso.design.bankcard.impl;
 
 import java.io.IOException;
 import java.util.Scanner;
 
+import com.iteso.design.bankcard.iBankCard;
+
 /**
  * Created by rvillalobos on 1/26/16.
  */
-public class OtherBankCard implements BankCard{
+public class OtherBankCard implements iBankCard{
 
 
     public String askForCard() {
