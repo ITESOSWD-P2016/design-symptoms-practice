@@ -1,4 +1,6 @@
-package com.iteso.design;
+package com.iteso.design.Tools;
+
+import com.iteso.design.Cuentahabiente.Cuentahabiente;
 
 import javax.swing.*;
 import java.io.*;

@@ -1,4 +1,4 @@
-package com.iteso.design;
+package com.iteso.design.Cuentahabiente;
 
 /**
  * Created by Sabino on 09/02/2016.

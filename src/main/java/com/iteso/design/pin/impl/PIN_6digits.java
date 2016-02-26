@@ -1,4 +1,4 @@
-package com.iteso.design;
+package com.iteso.design.pin.impl;
 
 import java.util.Scanner;
 

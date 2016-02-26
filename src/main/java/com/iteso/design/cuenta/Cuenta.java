@@ -1,4 +1,6 @@
-package com.iteso.design;
+package com.iteso.design.cuenta;
+
+import com.iteso.design.Tools.FileRead;
 
 import javax.swing.*;
 import java.io.IOException;

@@ -1,7 +1,8 @@
 package com.iteso.design;
 
 
-import java.io.IOException;
+import com.iteso.design.bankCard.BankCard;
+
 import java.util.Scanner;
 
 public class MyBankCard implements BankCard {

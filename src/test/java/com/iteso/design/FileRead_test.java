@@ -1,6 +1,8 @@
 package com.iteso.design;
 
 
+import com.iteso.design.Cuentahabiente.Cuentahabiente;
+import com.iteso.design.Tools.FileRead;
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 import static java.io.File.separator;
