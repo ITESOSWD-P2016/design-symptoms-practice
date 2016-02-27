@@ -1,11 +1,13 @@
-package com.iteso.design;
+package com.iteso.design.pin.impl;
+
+import com.iteso.design.pin.iPIN;
 
 import java.util.Scanner;
 
 /**
  * Created by lnvitado on 29/01/2016.
  */
-public class PIN_4digits implements PIN {
+public class PIN_4Digits implements iPIN {
 
 
 
@@ -27,7 +29,7 @@ public class PIN_4digits implements PIN {
                 }
 
                 else
-                    System.out.println("ERROR: PIN Incorrecto: " + PIN);
+                    System.out.println("ERROR: iPIN Incorrecto: " + PIN);
 
         return validity;
     }

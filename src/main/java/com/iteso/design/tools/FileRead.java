@@ -1,9 +1,13 @@
-package com.iteso.design;
+package com.iteso.design.tools;
 
 import javax.swing.*;
+
+import com.iteso.design.cuentahabiente.impl.Cuentahabiente;
+
 import java.io.*;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.Arrays;
 import java.util.Date;
 
 /**
@@ -22,7 +26,7 @@ public class FileRead {
     static final  short MES = 1;
     static final  short ANIO = 2;
 
-    static final  short RETIRO = 0;
+    public static final  short RETIRO = 0;
     static final  short DEPOSITO = 1;
 
 
@@ -38,15 +42,15 @@ public class FileRead {
     public FileRead(String file) {
         this.archivo = new File(file);
     }
-    
+
     public void closeFile(){
-    	if (br!= null)
-			try {
-				br.close();
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+        if (br!= null)
+            try {
+                br.close();
+            } catch (IOException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
     }
 
     private void createBufferReader(){
@@ -67,7 +71,7 @@ public class FileRead {
         bw = new BufferedWriter(fw);
     }
 
-    String readlastLine() {
+    public String readlastLine() {
         String last = "";
         createBufferReader();
         try {
@@ -82,7 +86,7 @@ public class FileRead {
         return "ERROR READING FILE";
     }
 
-    String readLine(int line) {
+    public String readLine(int line) {
         createBufferReader();
         int counter = 0;
         try {
@@ -103,7 +107,7 @@ public class FileRead {
 
     private String[] getData(String Datos){
         String DatosArray[] = Datos.split(",");
-       return DatosArray;
+        return DatosArray;
     }
 
     /**Esta funcion validara la linea , en dado caso que la linea que se requiera leer sea 0 (como no es posible leer esa )leera la ultima linea*/
@@ -111,20 +115,21 @@ public class FileRead {
         if(0==linea)return getData(readlastLine());
         else return getData(readLine(linea));
     }
-    
+
     // Obtener la informaci�n de un cuentahabiente
     public Cuentahabiente getCuentahabienteInfo (int idCuentahabiente){
-    	String [] arrCuentahabienteInfo;
-    	if (idCuentahabiente == 0)
-    		arrCuentahabienteInfo = getData(readlastLine());
-    	else
-    		arrCuentahabienteInfo = getData(readLine(idCuentahabiente));
-    	
-    	if (arrCuentahabienteInfo == null)
-    		return null;
-    	else{
-    		return new Cuentahabiente(arrCuentahabienteInfo[0], arrCuentahabienteInfo[1], arrCuentahabienteInfo[2]);
-    	}
+        String [] arrCuentahabienteInfo= null;
+
+        if (idCuentahabiente == 0)
+            arrCuentahabienteInfo = getData(readlastLine());
+        else
+            arrCuentahabienteInfo = getData(readLine(idCuentahabiente));
+
+        if (arrCuentahabienteInfo[0] == "ERROR READING FILE")
+            return null;
+        else{
+            return new Cuentahabiente(arrCuentahabienteInfo[0], arrCuentahabienteInfo[1], arrCuentahabienteInfo[2]);
+        }
     }
 
     public int getIdMovimiento(int linea){
@@ -186,11 +191,11 @@ public class FileRead {
         createBufferWiter();
 
         String nuevaHistoria =  "\n"+String.valueOf(IdMovimiento)+","+
-                                Fecha+","+
-                                String.valueOf(tipoMovimiento)+",0"+
-                                String.valueOf(cantidad)+","+
-                                String.valueOf(saldoAnterior)+","+
-                                String.valueOf(saldoNuevo);
+                Fecha+","+
+                String.valueOf(tipoMovimiento)+",0"+
+                String.valueOf(cantidad)+","+
+                String.valueOf(saldoAnterior)+","+
+                String.valueOf(saldoNuevo);
 
         bw.write(nuevaHistoria);
         bw.close();
