@@ -1,7 +1,39 @@
 package com.iteso.design.cuenta.impl;
 
-/**
- * Created by jorge on 27/02/16.
- */
-public class OtherBankCuenta {
+import java.io.IOException;
+
+import com.iteso.design.cuenta.iCuenta;
+
+public class OtherBankCuenta implements iCuenta{
+
+    public void hacerRetiro() throws IOException {
+        // TODO Auto-generated method stub
+
+    }
+
+    public void cambiarNIP() {
+        // TODO Auto-generated method stub
+
+    }
+
+    public void imprimirRecibo() {
+        // TODO Auto-generated method stub
+
+    }
+
+    public void verHistorial() {
+        // TODO Auto-generated method stub
+
+    }
+
+    public void hacerDonacion() {
+        // TODO Auto-generated method stub
+
+    }
+
+    public void ponerSaldoTelefonico() {
+        // TODO Auto-generated method stub
+
+    }
+
 }

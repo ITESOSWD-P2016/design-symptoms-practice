@@ -1,7 +1,14 @@
 package com.iteso.design.cuenta;
 
-/**
- * Created by jorge on 26/02/16.
- */
 public interface iRecibo {
+
+    public void imprimirHistorial(int idCuentahabiente);
+    public void imprimirUltimoMovimiento(int idCuentahabiente);
+    public void imprimirSaldo (int idCuentahabiente);
+    void imprimirInfoGeneral(int idCuentahabiente);
+    public void imprimirReciboSaldoTelefonico();
+    public void imprimirReciboDonativo();
+
+
+
 }
